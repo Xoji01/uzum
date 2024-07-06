@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Goods</title>
+</head>
+<body>
+    <!-- Пример кнопки для добавления в избранное -->
+    <button class="add-to-favorites-button" data-product-id="1">Добавить в избранное</button>
+    <button class="add-to-favorites-button" data-product-id="2">Добавить в избранное</button>
+    <script type="module">
+        // main.js 
+
+import { postData, fetchData } from './modules/https.js';
+import { toaster } from './modules/ui.js';
+
+// Функция для добавления товара в избранное
+
+// Функция для входа в систему
+const login = async (email, password) => {
+    try {
+        const response = await postData('/login', { email, password });
+        
+        if (response && response.id) {
+            localStorage.setItem('userId', response.id);
+            console.log('User logged in with ID:', response.id);
+        } else {
+            toaster('Ошибка входа. Проверьте ваши учетные данные.', 'error');
+        }
+    } catch (e) {
+        toaster(e.message, 'error');
+    }
+};
+
+// Обработчик нажатия на кнопку входа
+document.querySelector('.login-button').addEventListener('click', async () => {
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+    await login(email, password);
+});
+
+// Функция для добавления товара в избранное
+const addToFavorites = async (productId) => {
+    const userId = localStorage.getItem('userId');
+    
+    if (!userId) {
+        toaster('Пожалуйста, войдите в систему', 'error');
+        return;
+    }
+
+    const favoriteData = {
+        userId,
+        productId
+    };
+
+    try {
+        const response = await postData('/favorites', favoriteData);
+        console.log('Товар добавлен в избранное:', response);
+    } catch (e) {
+        console.error('Ошибка при добавлении товара в избранное:', e);
+        toaster(e.message, 'error');
+    }
+};
+
+// Обработчик нажатия на кнопку добавления в избранное
+document.querySelectorAll('.add-to-favorites-button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const productId = event.target.dataset.productId;
+        addToFavorites(productId);
+    });
+});
+    </script>
+</body>
+</html>

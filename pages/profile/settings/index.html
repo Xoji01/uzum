@@ -1,0 +1,128 @@
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Update User</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+            }
+            .container {
+                width: 900px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                display: flex;
+            }
+            .sidebar {
+                width: 200px;
+                margin-right: 20px;
+            }
+            .sidebar h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            .sidebar ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            .sidebar ul li {
+                margin: 10px 0;
+            }
+            .content {
+                flex-grow: 1;
+            }
+            .content h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            .update_userForm     {
+                max-width: 600px;
+                border: 1px solid #ccc;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            .update_userForm label {
+                display: block;
+                margin: 10px 0 5px;
+            }
+            .update_userForm input[type="text"],
+            .update_userForm input[type="email"],
+            .update_userForm input[type="tel"],
+            .update_userForm input[type="password"] {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            .update_userForm input[type="radio"] {
+                width: auto;
+                margin-right: 10px;
+            }
+            .update_userForm button.save {
+                display: block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #6200EA;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+                margin-top: 10px;   
+            }
+            .update_userForm .quit {
+                display: block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #ccc;
+                border-radius: 4px;
+            }
+            .button-container {
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <h2 class="namee"></h2>
+                <ul>
+                    <li>Мои заказы</li>
+                    <li>Настройки</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Мои данные</h2>
+                <h2 class="h"></h2>
+                <form  class="update_userForm" name="update_userForm">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" required>
+            
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+            
+                 
+            
+                    <button type="submit">Update User</button>
+                    <button class="quit" type="button">выйти</button>
+            </div>
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
+    </html>
