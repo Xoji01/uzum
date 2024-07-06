@@ -38,7 +38,7 @@ export function createheader() {
         
     </div>
     <div>
-        <a class="signin" href="#">Войти</a>
+        <a class="signin" href="../pages/signup/">Войти</a>
         <a class="izb" href="#">Избранное</a>
         <a class="bas" href="#">Корзина</a>
     </div>

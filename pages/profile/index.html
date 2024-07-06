@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            padding-right: 20px;
+            border-right: 1px solid #ccc;
+        }
+        .content {
+            flex: 1;
+            padding-left: 20px;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+        .sidebar a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: blue;
+        }
+        .tabs {
+            display: flex;
+            margin: 20px 0;
+        }
+        .tab {
+            margin-right: 20px;
+        }
+        .tab a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .order-details {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .order-details h2 {
+            margin-top: 0;
+        }
+        .order-details p {
+            margin: 5px 0;
+        }
+        .order-items {
+            margin-top: 20px;
+        }
+        .order-items h3 {
+            margin-bottom: 10px;
+        }
+        .order-items .item {
+            border-top: 1px solid #ccc;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Хожимурод</h1>
+            <a href="/pages/profile/settings/">Настройки</a>
+        </div>
+        <div class="content">
+            <div class="tabs">
+                <div class="tab"><a href="#">Все заказы</a></div>
+                <div class="tab"><a href="#">Неоплаченные</a></div>
+                <div class="tab"><a href="#">Активные</a></div>
+            </div>
+            <div class="order-details">
+                <h2>ID заказа 24696938</h2>
+                <p><strong>Статус:</strong> Выдан покупателю (Обновлен)</p>
+                <p><strong>Дата заказа:</strong> вторник</p>
+                <p><strong>Дата доставки:</strong> среда 5 июня</p>
+                <p><strong>Пункт выдачи:</strong> г. Самарканд</p>
+                <p><strong>Часы работы:</strong> 10:00-20:00</p>
+                <p><strong>Сумма заказа:</strong> 22222222/p>
+                <p><strong>Электронный чек</strong></p>
+            </div>
+            <div class="order-items">
+                <h3>1 товар</h3>
+                <div class="item">
+                    <!-- Details of the item -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
